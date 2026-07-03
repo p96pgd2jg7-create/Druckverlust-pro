@@ -1,0 +1,39 @@
+Δp
+Druckverlust ProVDI-2087 Rechner
+Rohr Rechteckkanal Bogen / Krümmer Übergang Etage T-Stück Drosselklappe Brandschutzklappe Freier ζ-Wert
+
+Neues Projekt Projekt speichern Projekt laden CSV-Export PDF / Drucken
+Projekt Neue Druckverlustberechnung
+Anlage
+Dichte ρ [kg/m³]
+ν [m²/s]
+Rauigkeit ε [mm]
+Rohr hinzufügen
+
+Teilstrecke berechnen & hinzufügen Eingabe leeren
+Alle Werte werden lokal im Browser berechnet. Für projektrelevante Freigaben Ergebnis gegen Herstellerdaten/Projektvorgaben prüfen.
+Gesamt Δp0 Pa
+Reibung0 Pa
+Einzelwiderstände0 Pa
+Teilstrecken0
+Teilstreckenliste
+Keine Warnungen
+Nr.
+Bauteil
+Beschreibung
+V [m³/h]
+v0 [m/s]
+v1 [m/s]
+A0 [m²]
+A1 [m²]
+Abmessung
+L [m]
+Re
+λ
+ζ
+R [Pa/m]
+Δp R [Pa]
+Δp ζ [Pa]
+Δp ges. [Pa]
+
+
