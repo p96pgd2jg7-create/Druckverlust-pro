@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Druckverlust Pro</title>
+  <style>
+:root{
+  --bg:#f3f6fb;--bg2:#e9eef7;--panel:#0f172a;--panel2:#182338;--card:#ffffff;
+  --text:#0f172a;--muted:#667085;--muted2:#94a3b8;--line:#d9e1ee;
+  --primary:#2563eb;--primary2:#1d4ed8;--danger:#dc2626;--warn:#d97706;--ok:#16a34a;
+  --shadow:0 18px 45px rgba(15,23,42,.08);--shadow2:0 8px 22px rgba(15,23,42,.06);
+  --radius:18px;--radius2:14px
+}
+*{box-sizing:border-box}html{background:var(--bg)}body{margin:0;font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;background:linear-gradient(135deg,var(--bg),var(--bg2));color:var(--text);font-size:14px}.app-shell{display:grid;grid-template-columns:236px minmax(0,1fr);min-height:100vh}.sidebar{background:linear-gradient(180deg,var(--panel),var(--panel2));color:#fff;padding:18px;display:flex;flex-direction:column;gap:8px;position:sticky;top:0;height:100vh;box-shadow:18px 0 35px rgba(15,23,42,.12);z-index:2}.brand{display:flex;gap:12px;align-items:center;margin-bottom:16px;padding:4px}.brand strong{font-size:17px}.brand span{display:block;color:#b6c2d6;font-size:12px;margin-top:2px}.logo{width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,#60a5fa,#2563eb);display:grid;place-items:center;font-weight:900;box-shadow:0 10px 25px rgba(37,99,235,.35)}.tool,.secondary{border:0;border-radius:12px;padding:10px 12px;text-align:left;cursor:pointer;font-weight:700;transition:.15s ease;font-size:13.5px}.tool{background:rgba(255,255,255,.07);color:#dbeafe}.tool:hover{background:rgba(255,255,255,.13);transform:translateX(2px)}.tool.active{background:#fff;color:#1d4ed8;box-shadow:0 8px 20px rgba(0,0,0,.18)}.nav-section{margin:10px 4px 4px;color:#93a4bc;font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.08em}.secondary{background:rgba(148,163,184,.18);color:#f8fafc}.secondary:hover{background:rgba(148,163,184,.28)}.file-label input{display:none}.component-picker{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:12px;margin-bottom:8px}.component-picker label{color:#cbd5e1;font-size:12px;margin-bottom:8px}.component-picker select{font-size:14px;border-radius:12px;padding:11px;background:#fff;color:#0f172a}.sidebar hr{width:100%;border:0;border-top:1px solid rgba(255,255,255,.14);margin:12px 0}main{width:100%;max-width:1440px;margin:0 auto;padding:20px}.topbar{display:grid;grid-template-columns:2fr 1.6fr repeat(4,minmax(130px,1fr));gap:14px;margin-bottom:18px}.topbar div,.card,.kpi{background:rgba(255,255,255,.92);border:1px solid rgba(217,225,238,.95);border-radius:var(--radius);box-shadow:var(--shadow2);backdrop-filter:blur(10px)}.topbar div{padding:12px 14px}.topbar label{font-size:12px;font-weight:800;letter-spacing:.01em;color:#64748b;margin-bottom:7px}.topbar input{font-size:15px;border-radius:12px;padding:10px 11px;background:#fff}label{display:block;font-size:15px;font-weight:800;color:#5f6b7a;margin-bottom:8px;line-height:1.15}input,select,textarea{width:100%;border:1px solid #cfd8e6;border-radius:14px;padding:12px 14px;background:#fff;font:inherit;font-size:16px;color:#0f172a;outline:none;transition:border-color .15s,box-shadow .15s,background .15s}input:focus,select:focus,textarea:focus{border-color:#93b4f6;box-shadow:0 0 0 4px rgba(37,99,235,.12);background:#fff}select{appearance:auto}h2{margin:0 0 16px;font-size:24px;letter-spacing:-.03em}.workspace{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:18px;align-items:start}.input-card{padding:24px}.grid{display:grid;grid-template-columns:repeat(4,minmax(145px,1fr));gap:16px}.grid>div{min-width:0;display:flex;flex-direction:column}.grid label{min-height:38px;display:flex;align-items:flex-end}.actions{display:flex;align-items:center;gap:12px;margin-top:18px;flex-wrap:wrap}button{background:linear-gradient(135deg,var(--primary),var(--primary2));color:#fff;border:0;border-radius:12px;padding:12px 16px;font-weight:800;cursor:pointer;box-shadow:0 8px 18px rgba(37,99,235,.22);transition:.15s ease}button:hover{filter:brightness(1.03);transform:translateY(-1px)}.secondary-light{background:#e8eef6;color:#334155;box-shadow:none}.hint{color:#64748b;font-size:13px;margin:12px 0 0;line-height:1.45}.velocity-preview{margin-right:auto;min-width:118px;padding:8px 11px;border-radius:999px;background:#eef5ff;border:1px solid #cfe0ff;display:flex;align-items:center;gap:8px;color:#1d4ed8;box-shadow:none}.velocity-preview span{width:26px;height:26px;border-radius:999px;background:#dbeafe;color:#1d4ed8;display:grid;place-items:center;font-weight:900}.velocity-preview strong{font-size:15px;white-space:nowrap}.velocity-preview.warn{background:#fff7ed;border-color:#fed7aa;color:#c2410c}.velocity-preview.warn span{background:#ffedd5;color:#c2410c}.velocity-preview.bad{background:#fef2f2;border-color:#fecaca;color:#b91c1c}.velocity-preview.bad span{background:#fee2e2;color:#b91c1c}.summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.kpi{padding:18px;min-height:92px;display:flex;flex-direction:column;justify-content:center}.kpi span{display:block;color:#667085;font-size:13px;font-weight:700}.kpi strong{font-size:28px;letter-spacing:-.04em;line-height:1.05}.pdf-card{padding:22px}.pdf-card textarea{width:100%;margin-top:10px;font-family:ui-monospace,Consolas,monospace;font-size:12px}.candidate{display:flex;gap:10px;align-items:center;justify-content:space-between;border:1px solid var(--line);border-radius:14px;padding:10px;margin-top:8px;background:#f8fafc}.candidate small{color:var(--muted)}.table-card{margin-top:18px;padding:18px;overflow:hidden}.table-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}.table-head h2{margin:0}.table-head #validationState{font-weight:800;color:var(--ok);white-space:nowrap}.table-head #validationState.warn{color:var(--warn)}.table-wrap{overflow:auto;border-radius:14px;border:1px solid var(--line);background:#fff}table{border-collapse:separate;border-spacing:0;width:100%;min-width:1040px;font-size:13px}th,td{padding:10px 10px;text-align:left;border-bottom:1px solid #edf1f7;white-space:nowrap}th{background:#f8fafc;color:#475569;font-size:12px;font-weight:900;position:sticky;top:0;z-index:1}tbody tr:hover{background:#f8fbff}tbody tr:last-child td{border-bottom:0}.warn{color:var(--warn);font-weight:800}.bad{color:var(--danger);font-weight:800}.ok{color:var(--ok);font-weight:800}.row-actions{display:flex;gap:6px;flex-wrap:nowrap;min-width:255px}.mini,.delete{padding:7px 9px;border-radius:9px;font-size:12px;box-shadow:none}.mini{background:#334155}.delete{background:#fee2e2;color:#b91c1c}.delete:hover{background:#fecaca}@media(min-width:1500px){main{max-width:1500px}.workspace{grid-template-columns:minmax(0,1fr) 360px}.grid{grid-template-columns:repeat(5,minmax(140px,1fr))}}@media(max-width:1180px){.app-shell{grid-template-columns:210px minmax(0,1fr)}main{padding:14px}.topbar{grid-template-columns:repeat(2,minmax(0,1fr))}.workspace{grid-template-columns:1fr}.summary-grid{grid-template-columns:repeat(5,minmax(130px,1fr))}.grid{grid-template-columns:repeat(3,minmax(150px,1fr))}.kpi{min-height:80px}.kpi strong{font-size:24px}}@media(max-width:900px){.app-shell{display:block}.sidebar{position:relative;height:auto}.topbar{grid-template-columns:1fr}.workspace{grid-template-columns:1fr}.grid{grid-template-columns:1fr 1fr}.summary-grid{grid-template-columns:1fr 1fr}.actions{flex-direction:column;align-items:stretch}.velocity-preview{width:100%;justify-content:center;margin-right:0}.table-wrap{overflow-x:auto}main{padding:12px}h2{font-size:21px}}@media(max-width:560px){.grid label{min-height:auto}.grid{grid-template-columns:1fr}.summary-grid{grid-template-columns:1fr}input,select,textarea{font-size:16px}.row-actions{flex-wrap:wrap;min-width:180px}}
+
+/* Final-Layout: ruhiger, weniger Versatz */
+.component-picker{position:relative}.component-picker select{line-height:1.25}.input-card{max-width:100%}.grid{grid-template-columns:repeat(auto-fit,minmax(190px,1fr));align-items:end}.grid label{min-height:34px}.actions{border-top:1px solid #eef2f7;padding-top:16px}.summary-grid{align-self:start}.table-card{box-shadow:var(--shadow)}@media(min-width:1181px){.workspace{grid-template-columns:minmax(680px,1fr) 360px}.summary-grid{position:sticky;top:18px}.topbar{grid-template-columns:1.6fr 1.3fr repeat(4,minmax(120px,1fr))}}@media(max-width:900px){.component-picker{margin-top:8px}.grid label{min-height:auto}.topbar input,.topbar select{font-size:16px}.sidebar{box-shadow:none}}
+
+
+/* Gleich große Eingabefelder */
+.grid{align-items:stretch}.grid>div{height:100%}.grid label{height:40px;min-height:40px;align-items:flex-end}.grid input,.grid select{height:54px;min-height:54px;width:100%;display:block}.grid textarea{min-height:54px}.topbar input,.topbar select{height:42px}.component-picker select{height:46px}.actions button{min-height:46px}@media(max-width:560px){.grid label{height:auto;min-height:auto}.grid input,.grid select{height:52px;min-height:52px}}
+
+</style>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="logo">Δp</div>
+        <div><strong>Druckverlust Pro</strong><span>VDI-2087 Rechner</span></div>
+      </div>
+      <div class="component-picker">
+        <label for="componentSelect">Bauteil auswählen</label>
+        <select id="componentSelect">
+          <optgroup label="Luftleitungen">
+            <option value="rect">Rechteckkanal</option>
+            <option value="spiralRound">Wickelfalzrohr</option>
+            <option value="round">Glattrohr</option>
+            <option value="flexRound">Flexrohr</option>
+            <option value="customDuct">Individuelle Eingabe Luftleitung</option>
+          </optgroup>
+          <optgroup label="Formteile">
+            <option value="elbow90">90°-Bogen</option>
+            <option value="elbow45">45°-Bogen</option>
+            <option value="segmentElbow">Segmentbogen</option>
+            <option value="teePiece">T-Stück</option>
+            <option value="yPiece">Y-Stück</option>
+            <option value="pantsPiece">Hosenstück</option>
+            <option value="reductionSym">Reduzierung symmetrisch</option>
+            <option value="reductionAsym">Reduzierung asymmetrisch</option>
+            <option value="transitionRoundRect">Übergang rund/rechteckig</option>
+            <option value="transitionRectRound">Übergang rechteckig/rund</option>
+            <option value="offsetPiece">Versprung</option>
+            <option value="customFitting">Individuelle Eingabe Formteil</option>
+          </optgroup>
+          <optgroup label="Regel- und Absperrbauteile">
+            <option value="fireDamper">Brandschutzklappe</option>
+            <option value="smokeDamper">Entrauchungsklappe</option>
+            <option value="cav">Volumenstromregler konstant (CAV)</option>
+            <option value="vav">Volumenstromregler variabel (VAV)</option>
+            <option value="damper">Drosselklappe</option>
+            <option value="louverDamper">Jalousieklappe</option>
+            <option value="irisDamper">Irisblende</option>
+            <option value="backdraftDamper">Rückschlagklappe</option>
+            <option value="customControl">Individuelle Eingabe Regel-/Absperrbauteil</option>
+          </optgroup>
+          <optgroup label="Schalldämpfer">
+            <option value="splitterSilencer">Kulissenschalldämpfer</option>
+            <option value="roundSilencer">Rohrschalldämpfer</option>
+            <option value="telephoneSilencer">Telefonieschalldämpfer</option>
+            <option value="customSilencer">Individuelle Eingabe Schalldämpfer</option>
+          </optgroup>
+          <optgroup label="Luftdurchlässe">
+            <option value="discValve">Tellerventil</option>
+            <option value="swirlDiffuser">Drallauslass</option>
+            <option value="slotDiffuser">Schlitzdurchlass</option>
+            <option value="jetNozzle">Weitwurfdüse</option>
+            <option value="displacementOutlet">Quellluftdurchlass</option>
+            <option value="floorOutlet">Bodenauslass</option>
+            <option value="floorSwirl">Bodendrallauslass</option>
+            <option value="floorGrille">Bodengitter</option>
+            <option value="ceilingGrille">Deckengitter</option>
+            <option value="wallGrille">Wandgitter</option>
+            <option value="ductGrille">Kanalgitter</option>
+            <option value="weatherGrille">Wetterschutzgitter</option>
+            <option value="customOutlet">Individuelle Eingabe Luftdurchlass</option>
+          </optgroup>
+          <optgroup label="Außenluft-/Fortluftbauteile">
+            <option value="weatherHood">Wetterhaube</option>
+            <option value="intakeTower">Ansaugturm</option>
+            <option value="exhaustHood">Fortlufthaube</option>
+            <option value="rainDeflector">Regenabweiser</option>
+            <option value="customOutdoor">Individuelle Eingabe Außenluft/Fortluft</option>
+          </optgroup>
+        </select>
+      </div>
+      <hr />
+      <button id="newProject" class="secondary">Neues Projekt</button>
+      <button id="saveProject" class="secondary">Projekt speichern</button>
+      <label class="secondary file-label">Projekt laden<input id="loadProject" type="file" accept=".json" /></label>
+      <label class="secondary file-label">PDF einlesen<input id="importPdf" type="file" accept=".pdf" /></label>
+      <button id="exportCsv" class="secondary">CSV-Export</button>
+      <button id="printReport" class="secondary">PDF / Drucken</button>
+    </aside>
+
+    <main>
+      <header class="topbar">
+        <div>
+          <label>Projekt</label>
+          <input id="projectName" value="Neue Druckverlustberechnung" />
+        </div>
+        <div>
+          <label>Anlage</label>
+          <input id="systemName" placeholder="z. B. RLT 01 Zuluft" />
+        </div>
+        <div>
+          <label>Dichte ρ [kg/m³]</label>
+          <input id="rho" type="number" step="0.01" value="1.2" />
+        </div>
+        <div>
+          <label>ν [m²/s]</label>
+          <input id="nu" type="number" step="0.00000001" value="0.00001536" />
+        </div>
+        <div>
+          <label>Oberfläche</label>
+          <select id="surface">
+            <option value="0.09">Verzinkt / Stahlblech</option>
+            <option value="0.0015">Kunststoff glatt</option>
+            <option value="0.05">Aluminium glatt</option>
+            <option value="0.15">Stahl geschweißt</option>
+            <option value="0.3">Beton glatt</option>
+            <option value="1.0">Beton rau</option>
+            <option value="custom">Individuell</option>
+          </select>
+        </div>
+        <div>
+          <label>Rauigkeit individuell ε [mm]</label>
+          <input id="roughness" type="number" step="0.001" value="0.09" />
+        </div>
+      </header>
+
+      <section class="workspace">
+        <form id="componentForm" class="card input-card">
+          <h2 id="formTitle">Rohr hinzufügen</h2>
+          <div class="grid" id="dynamicFields"></div>
+          <div class="actions">
+            <div id="velocityPreview" class="velocity-preview"><span>v</span><strong>– m/s</strong></div>
+            <button type="submit">Teilstrecke berechnen & hinzufügen</button>
+            <button type="button" id="resetForm" class="secondary-light">Eingabe leeren</button>
+          </div>
+          <p class="hint">Alle Werte werden lokal im Browser berechnet. Für projektrelevante Freigaben Ergebnis gegen Herstellerdaten/Projektvorgaben prüfen.</p>
+        </form>
+
+        <section id="pdfImportCard" class="card pdf-card" style="display:none">
+          <h2>PDF-Import</h2>
+          <p class="hint">PDF wurde ausgelesen. Prüfe die erkannten Werte, bevor du sie übernimmst.</p>
+          <div id="pdfImportStatus" class="hint"></div>
+          <textarea id="pdfText" rows="8" readonly></textarea>
+          <div id="pdfCandidates"></div>
+        </section>
+
+        <section class="summary-grid">
+          <div class="kpi"><span>Gesamt Δp</span><strong id="totalDp">0 Pa</strong></div>
+          <div class="kpi"><span>Reibung</span><strong id="frictionDp">0 Pa</strong></div>
+          <div class="kpi"><span>Einzelwiderstände</span><strong id="localDp">0 Pa</strong></div>
+          <div class="kpi"><span>Teilstrecken</span><strong id="countRows">0</strong></div>
+          <div class="kpi"><span>max. Geschwindigkeit</span><strong id="maxVelocity">0 m/s</strong></div>
+        </section>
+      </section>
+
+      <section class="table-card card">
+        <div class="table-head"><h2>Teilstreckenliste</h2><div id="validationState">Keine Warnungen</div></div>
+        <div class="table-wrap">
+          <table id="sectionsTable">
+            <thead>
+              <tr>
+                <th>Nr.</th><th>Bauteil</th><th>Beschreibung</th><th>V [m³/h]</th><th>v [m/s]</th><th>A [m²]</th><th>Abmessung</th><th>L [m]</th><th>Re</th><th>λ</th><th>ζ</th><th>R [Pa/m]</th><th>Δp R [Pa]</th><th>Δp ζ [Pa]</th><th>Δp ges. [Pa]</th><th></th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script>
+// math.js
+const AIR_DEFAULTS={rho:1.2,nu:15.36e-6,roughnessMm:0.09};
+function round(n,d=2){return Number.isFinite(n)?Number(n.toFixed(d)):0}
+function areaRound(dMm){const d=dMm/1000;return Math.PI*d*d/4}
+function areaRect(aMm,bMm){return (aMm/1000)*(bMm/1000)}
+function hydraulicDiameterRect(aMm,bMm){const a=aMm/1000,b=bMm/1000;return 2*a*b/(a+b)}
+function velocity(qM3h,area){return (qM3h/3600)/area}
+function reynolds(v,dHyd,nu){return Math.abs(v)*dHyd/nu}
+function frictionFactor(re,dHyd,roughnessMm){if(!Number.isFinite(re)||re<=0)return 0;if(re<2320)return 64/re;const eps=roughnessMm/1000;let lambda=0.02;for(let i=0;i<25;i++){const rhs=-2*Math.log10((eps/(3.71*dHyd))+(2.51/(re*Math.sqrt(lambda))));lambda=1/(rhs*rhs)}return lambda}
+function frictionPressure(lambda,length,dHyd,rho,v){return lambda*(length/dHyd)*(rho/2)*v*v}
+function pressureGradient(lambda,dHyd,rho,v){return lambda/dHyd*(rho/2)*v*v}
+function localPressure(zeta,rho,v){return zeta*(rho/2)*v*v}
+function interpolate2D(x,y,xs,ys,z){const xi=Math.max(0,Math.min(xs.length-2,xs.findIndex(v=>v>=x)-1<0?0:xs.findIndex(v=>v>=x)-1));const yi=Math.max(0,Math.min(ys.length-2,ys.findIndex(v=>v>=y)-1<0?0:ys.findIndex(v=>v>=y)-1));const x0=xs[xi],x1=xs[xi+1],y0=ys[yi],y1=ys[yi+1];const q11=z[yi][xi],q21=z[yi][xi+1],q12=z[yi+1][xi],q22=z[yi+1][xi+1];const tx=(x-x0)/(x1-x0||1),ty=(y-y0)/(y1-y0||1);return q11*(1-tx)*(1-ty)+q21*tx*(1-ty)+q12*(1-tx)*ty+q22*tx*ty}
+
+// components.js
+
+const ZETA_PRESETS={
+ elbow:[['0.22','Runder glatter 90°-Bogen r/D≈1,0 (ASHRAE 3-1)'],['0.35','Praxiswert 90°-Bogen rechteckig/Standard'],['0.50','enger/segmentierter Bogen'],['0.80','ungünstiger scharfkantiger Bogen']],
+ transition:[['0.10','günstiger allmählicher Übergang'],['0.20','Standard-Übergang'],['0.40','kurzer/steiler Übergang'],['0.80','ungünstiger plötzlicher Übergang']],
+ offset:[['0.30','flache Etage/günstig'],['0.45','Standard-Etage'],['0.80','kurze/enge Etage']],
+ tee:[['0.50','günstiges T-Stück / Abzweig mit guter Führung'],['0.80','Standard T-Stück'],['1.20','ungünstiger Abzweig'],['2.00','stark ungünstig / hoher Abzweigverlust']],
+ damper:[['0.30','Klappe offen/günstig'],['1.20','Standard Drosselklappe'],['3.00','teilweise gedrosselt'],['8.00','stark gedrosselt']],
+ fireDamper:[['0.30','günstige Brandschutzklappe laut Hersteller'],['0.60','Standard Brandschutzklappe'],['1.20','ungünstige/kleine Baugröße']],
+ custom:[['0.50','kleiner Einzelwiderstand'],['1.00','mittlerer Einzelwiderstand'],['2.00','Wetterschutzgitter / freier Praxiswert'],['5.00','hoher Einzelwiderstand']]
+};
+const zetaOptions=type=>ZETA_PRESETS[type].map(([v,t])=>`${v}:${t} (ζ ${v})`).join(';');
+
+const zetaOpts={
+ duct:'0.00:keine Einzelwiderstände (ζ 0.00)',
+ elbow:'0.25:günstiger Bogen (ζ 0.25);0.45:Standardbogen (ζ 0.45);0.75:enger/ungünstiger Bogen (ζ 0.75)',
+ branch:'0.60:günstiger Abzweig (ζ 0.60);1.00:Standard Abzweig (ζ 1.00);1.60:ungünstiger Abzweig (ζ 1.60)',
+ transition:'0.15:günstiger Übergang (ζ 0.15);0.30:Standard Übergang (ζ 0.30);0.60:kurzer/ungünstiger Übergang (ζ 0.60)',
+ fitting:'0.10:günstiges Formteil (ζ 0.10);0.30:Standard Formteil (ζ 0.30);0.60:ungünstiges Formteil (ζ 0.60)',
+ damper:'0.40:offen/günstig (ζ 0.40);1.20:Standard (ζ 1.20);3.00:gedrosselt/ungünstig (ζ 3.00)',
+ silencer:'0.50:günstiger Schalldämpfer (ζ 0.50);1.00:Standard Schalldämpfer (ζ 1.00);2.00:hoher Druckverlust (ζ 2.00)',
+ outlet:'1.00:günstiger Auslass/Gitter (ζ 1.00);2.00:Standard Auslass/Gitter (ζ 2.00);4.00:hoher Druckverlust (ζ 4.00)',
+ weather:'1.50:günstige Außenluft/Fortluft (ζ 1.50);3.00:Standard (ζ 3.00);6.00:ungünstig/hoher Druckverlust (ζ 6.00)'
+};
+const zetaField=(key,val)=>[['zeta','ζ-Wert manuell','number',val],['dpManufacturer','Hersteller Δp [Pa] optional','number','']];
+const DN_SPIRAL='80:DN 80;100:DN 100;125:DN 125;150:DN 150;160:DN 160;180:DN 180;200:DN 200;224:DN 224;250:DN 250;280:DN 280;300:DN 300;315:DN 315;355:DN 355;400:DN 400;450:DN 450;500:DN 500;560:DN 560;630:DN 630;710:DN 710;800:DN 800;900:DN 900;1000:DN 1000;1120:DN 1120;1250:DN 1250';
+const RECT_SIZES='custom:Individuell;200x100:200 × 100;300x150:300 × 150;400x200:400 × 200;500x250:500 × 250;600x300:600 × 300;700x400:700 × 400;800x400:800 × 400;1000x500:1000 × 500;1200x600:1200 × 600;1500x800:1500 × 800';
+const roundDuct=(label,desc,d=315,len=5)=>({label,fields:[['description','Beschreibung','text',desc],['q','Volumenstrom [m³/h]','number',1000],['d','Nennweite / Durchmesser','select',d,DN_SPIRAL],['length','Länge [m]','number',len]]});
+const spiralDuct=roundDuct;
+const rectFields=(a=600,b=300)=>[['rectSize','Standardmaß','select',`${a}x${b}`,RECT_SIZES],['a','Breite [mm]','number',a],['b','Höhe [mm]','number',b]];
+const rectDuct=(label,desc,a=600,b=300,len=5)=>({label,fields:[['description','Beschreibung','text',desc],['q','Volumenstrom [m³/h]','number',2000],...rectFields(a,b),['length','Länge [m]','number',len]]});
+const roundLocal=(label,desc,key='fitting',z=0.3,d=315)=>({label,fields:[['description','Beschreibung','text',desc],['q','Volumenstrom [m³/h]','number',1000],['d','Nennweite / Durchmesser','select',d,DN_SPIRAL],...zetaField(key,z)]});
+const rectLocal=(label,desc,key='fitting',z=0.3,a=600,b=300)=>({label,fields:[['description','Beschreibung','text',desc],['q','Volumenstrom [m³/h]','number',2000],...rectFields(a,b),...zetaField(key,z)]});
+const shapeLocal=(label,desc,key='fitting',z=0.3)=>({label,fields:[['description','Beschreibung','text',desc],['q','Volumenstrom [m³/h]','number',1500],['shape','Bauform','select','rect','rect:Eckig;round:Rund'],['a','Breite / Durchmesser [mm]','number',400],['b','Höhe bei eckig [mm]','number',300],...zetaField(key,z)]});
+const transitionRR=(label,desc,dir,key='transition',z=0.3)=>({label,fields:dir==='roundRect'?
+ [['description','Beschreibung','text',desc],['q','Volumenstrom [m³/h]','number',1500],['d0','Eingang rund DN [mm]','select',315,DN_SPIRAL],...rectFields(600,300),...zetaField(key,z)]:
+ [['description','Beschreibung','text',desc],['q','Volumenstrom [m³/h]','number',1500],...rectFields(600,300),['d1','Ausgang rund DN [mm]','select',315,DN_SPIRAL],...zetaField(key,z)]});
+const COMPONENTS={
+ rect:rectDuct('Rechteckkanal','Rechteckkanal'), spiralRound:spiralDuct('Wickelfalzrohr','Wickelfalzrohr'), round:roundDuct('Glattrohr','Glattrohr'), flexRound:roundDuct('Flexrohr','Flexrohr',160,3),
+ elbow90:shapeLocal('90°-Bogen','90°-Bogen','elbow',0.45), elbow45:shapeLocal('45°-Bogen','45°-Bogen','elbow',0.25), segmentElbow:shapeLocal('Segmentbogen','Segmentbogen','elbow',0.75), teePiece:shapeLocal('T-Stück','T-Stück','branch',1.0), yPiece:shapeLocal('Y-Stück','Y-Stück','branch',0.8), pantsPiece:shapeLocal('Hosenstück','Hosenstück','branch',1.0), reductionSym:shapeLocal('Reduzierung symmetrisch','Reduzierung symmetrisch','transition',0.3), reductionAsym:shapeLocal('Reduzierung asymmetrisch','Reduzierung asymmetrisch','transition',0.6), transitionRoundRect:transitionRR('Übergang rund/rechteckig','Übergang rund/rechteckig','roundRect','transition',0.3), transitionRectRound:transitionRR('Übergang rechteckig/rund','Übergang rechteckig/rund','rectRound','transition',0.3), offsetPiece:shapeLocal('Versprung','Versprung','fitting',0.6),
+ fireDamper:shapeLocal('Brandschutzklappe','Brandschutzklappe','damper',0.6), smokeDamper:shapeLocal('Entrauchungsklappe','Entrauchungsklappe','damper',0.8), cav:shapeLocal('Volumenstromregler konstant (CAV)','CAV-Regler','damper',2.0), vav:shapeLocal('Volumenstromregler variabel (VAV)','VAV-Regler','damper',2.0), damper:shapeLocal('Drosselklappe','Drosselklappe','damper',1.2), louverDamper:shapeLocal('Jalousieklappe','Jalousieklappe','damper',1.5), irisDamper:roundLocal('Irisblende','Irisblende','damper',2.0), backdraftDamper:shapeLocal('Rückschlagklappe','Rückschlagklappe','damper',1.5),
+ splitterSilencer:rectLocal('Kulissenschalldämpfer','Kulissenschalldämpfer','silencer',1.0), roundSilencer:roundLocal('Rohrschalldämpfer','Rohrschalldämpfer','silencer',1.0), telephoneSilencer:shapeLocal('Telefonieschalldämpfer','Telefonieschalldämpfer','silencer',1.0),
+ discValve:roundLocal('Tellerventil','Tellerventil','outlet',2.0), swirlDiffuser:shapeLocal('Drallauslass','Drallauslass','outlet',2.0), slotDiffuser:rectLocal('Schlitzdurchlass','Schlitzdurchlass','outlet',2.0), jetNozzle:roundLocal('Weitwurfdüse','Weitwurfdüse','outlet',1.5), displacementOutlet:rectLocal('Quellluftdurchlass','Quellluftdurchlass','outlet',1.0), floorOutlet:shapeLocal('Bodenauslass','Bodenauslass','outlet',2.0), floorSwirl:shapeLocal('Bodendrallauslass','Bodendrallauslass','outlet',2.0), floorGrille:rectLocal('Bodengitter','Bodengitter','outlet',2.0), ceilingGrille:rectLocal('Deckengitter','Deckengitter','outlet',2.0), wallGrille:rectLocal('Wandgitter','Wandgitter','outlet',2.0), ductGrille:rectLocal('Kanalgitter','Kanalgitter','outlet',2.0), weatherGrille:rectLocal('Wetterschutzgitter','Wetterschutzgitter','weather',3.0),
+ weatherHood:shapeLocal('Wetterhaube','Wetterhaube','weather',3.0), intakeTower:shapeLocal('Ansaugturm','Ansaugturm','weather',3.0), exhaustHood:shapeLocal('Fortlufthaube','Fortlufthaube','weather',3.0), rainDeflector:shapeLocal('Regenabweiser','Regenabweiser','weather',2.0),
+ customDuct:shapeLocal('Individuelle Eingabe Luftleitung','Individuelle Luftleitung','fitting',0.0), customFitting:shapeLocal('Individuelle Eingabe Formteil','Individuelles Formteil','fitting',0.5), customControl:shapeLocal('Individuelle Eingabe Regel-/Absperrbauteil','Individuelles Regel-/Absperrbauteil','damper',1.0), customSilencer:shapeLocal('Individuelle Eingabe Schalldämpfer','Individueller Schalldämpfer','silencer',1.0), customOutlet:shapeLocal('Individuelle Eingabe Luftdurchlass','Individueller Luftdurchlass','outlet',2.0), customOutdoor:shapeLocal('Individuelle Eingabe Außenluft/Fortluft','Individuelles Außenluft-/Fortluftbauteil','weather',3.0),
+ /* alte Projekt-Kompatibilität */ elbow:shapeLocal('Bogen / Krümmer','Bogen 90°','elbow',0.45), transition:rectLocal('Übergang eckig','Übergang eckig','transition',0.3), offset:shapeLocal('Etage','Etage','fitting',0.45), tee:shapeLocal('T-Stück','T-Stück','branch',1.0), fireDamperRect:shapeLocal('Brandschutzklappe eckig','Brandschutzklappe eckig','damper',0.6), fireDamperRound:roundLocal('Brandschutzklappe rund','Brandschutzklappe rund','damper',0.6), damperRect:shapeLocal('Drosselklappe eckig','Drosselklappe eckig','damper',1.2), damperRound:roundLocal('Drosselklappe rund','Drosselklappe rund','damper',1.2), custom:shapeLocal('Freier ζ-Wert','Freier Widerstand','fitting',2.0), customRect:rectLocal('Freier ζ-Wert eckig','Freier Widerstand eckig','fitting',2.0), customRound:roundLocal('Freier ζ-Wert rund','Freier Widerstand rund','fitting',2.0)
+};
+function sectionAreaAndDh(input){if(input.shape==='round'||input.d){const d=input.d||input.a;return{area:areaRound(+d),dh:+d/1000,dim:`Ø ${+d||+input.a} mm`}}const a=+input.a||+input.a0,b=+input.b||+input.b0;return{area:areaRect(a,b),dh:hydraulicDiameterRect(a,b),dim:`${a} × ${b} mm`}}
+function calculate(type,input,air,no){let area0,area1,dh,dim,v0,v1,re,lambda,R,dpF=0,dpL=0,zeta=+(input.zeta||0),length=+(input.length||0),q=+(input.q||0);const dpMan=parseValue(input.dpManufacturer)||0;if(type==='round'||type==='spiralRound'||type==='flexRound'){area0=area1=areaRound(+input.d);dh=+input.d/1000;dim=`Ø ${input.d} mm`;v0=v1=velocity(q,area0);re=reynolds(v0,dh,air.nu);lambda=frictionFactor(re,dh,air.roughnessMm);R=pressureGradient(lambda,dh,air.rho,v0);dpF=frictionPressure(lambda,length,dh,air.rho,v0);zeta=0}
+else if(type==='rect'){area0=area1=areaRect(+input.a,+input.b);dh=hydraulicDiameterRect(+input.a,+input.b);dim=`${input.a} × ${input.b} mm`;v0=v1=velocity(q,area0);re=reynolds(v0,dh,air.nu);lambda=frictionFactor(re,dh,air.roughnessMm);R=pressureGradient(lambda,dh,air.rho,v0);dpF=frictionPressure(lambda,length,dh,air.rho,v0);zeta=0}
+else if(type==='transition'){area0=areaRect(+input.a0,+input.b0);area1=areaRect(+input.a1,+input.b1);dh=hydraulicDiameterRect(+input.a1,+input.b1);dim=`${input.a0}×${input.b0} → ${input.a1}×${input.b1} mm`;v0=velocity(q,area0);v1=velocity(q,area1);re=reynolds(v1,dh,air.nu);lambda=frictionFactor(re,dh,air.roughnessMm);R=0;dpL=dpMan>0?dpMan:localPressure(zeta,air.rho,Math.max(v0,v1))}
+else if(type==='transitionRoundRect'){area0=areaRound(+input.d0);area1=areaRect(+input.a,+input.b);dh=hydraulicDiameterRect(+input.a,+input.b);dim=`Ø ${input.d0} → ${input.a}×${input.b} mm`;v0=velocity(q,area0);v1=velocity(q,area1);re=reynolds(v1,dh,air.nu);lambda=frictionFactor(re,dh,air.roughnessMm);R=0;dpL=dpMan>0?dpMan:localPressure(zeta,air.rho,Math.max(v0,v1))}
+else if(type==='transitionRectRound'){area0=areaRect(+input.a,+input.b);area1=areaRound(+input.d1);dh=+input.d1/1000;dim=`${input.a}×${input.b} → Ø ${input.d1} mm`;v0=velocity(q,area0);v1=velocity(q,area1);re=reynolds(v1,dh,air.nu);lambda=frictionFactor(re,dh,air.roughnessMm);R=0;dpL=dpMan>0?dpMan:localPressure(zeta,air.rho,Math.max(v0,v1))}
+else{const g=sectionAreaAndDh(input);area0=area1=g.area;dh=g.dh;dim=g.dim;v0=v1=velocity(q,area0);re=reynolds(v0,dh,air.nu);lambda=frictionFactor(re,dh,air.roughnessMm);R=0;dpL=dpMan>0?dpMan:localPressure(zeta,air.rho,v0)}
+return{no,type,input,component:COMPONENTS[type].label,description:input.description||COMPONENTS[type].label,q,area0,area1,v0,v1,dh,dim,length,re,lambda,zeta,R,dpF,dpL,dp:dpF+dpL,warnings:validate(v0,v1,re)}}
+function validate(v0,v1,re){const w=[];if(Math.max(v0,v1)>10)w.push('hohe Luftgeschwindigkeit >10 m/s');if(Math.max(v0,v1)>15)w.push('kritische Luftgeschwindigkeit >15 m/s');if(re<2320)w.push('laminare Strömung');return w}
+function formatRow(s){return [s.no,s.component,s.description,round(s.q,0),round(s.v0,2),round(s.v1,2),round(s.area0,4),round(s.area1,4),s.dim,round(s.length,2),round(s.re,0),round(s.lambda,4),round(s.zeta,3),round(s.R,2),round(s.dpF,2),round(s.dpL,2),round(s.dp,2)]}
+function displayRow(s){const isTrans=s.type==='transition';const v=isTrans?`${round(s.v0,2)} → ${round(s.v1,2)}`:round(s.v0,2);const a=isTrans?`${round(s.area0,4)} → ${round(s.area1,4)}`:round(s.area0,4);return [s.no,s.component,s.description,round(s.q,0),v,a,s.dim,round(s.length,2),round(s.re,0),round(s.lambda,4),round(s.zeta,3),round(s.R,2),round(s.dpF,2),round(s.dpL,2),round(s.dp,2)]}
+
+// app.js
+let state={projectName:'Neue Druckverlustberechnung',systemName:'',sections:[],selected:'round',air:{...AIR_DEFAULTS}};
+let editIndex=null;
+let insertIndex=null;
+const $=s=>document.querySelector(s);const $$=s=>Array.from(document.querySelectorAll(s));
+function init(){renderForm();render();const cs=$('#componentSelect');if(cs){cs.value=state.selected;cs.onchange=()=>{state.selected=cs.value;editIndex=null;insertIndex=null;renderForm()}}$$('.tool').forEach(b=>b.onclick=()=>{state.selected=b.dataset.component;editIndex=null;insertIndex=null;syncActiveTool();renderForm()});$('#componentForm').onsubmit=e=>{e.preventDefault();saveSection()};$('#resetForm').onclick=()=>{editIndex=null;insertIndex=null;renderForm()};$('#newProject').onclick=()=>{if(confirm('Aktuelles Projekt verwerfen?')){state={projectName:'Neue Druckverlustberechnung',systemName:'',sections:[],selected:'round',air:{...AIR_DEFAULTS}};editIndex=null;insertIndex=null;syncInputs();renderForm();render()}};$('#saveProject').onclick=downloadProject;$('#loadProject').onchange=loadProject;$('#importPdf').onchange=importPdf;$('#exportCsv').onclick=exportCsv;$('#printReport').onclick=()=>window.print();['projectName','systemName','rho','nu'].forEach(id=>$('#'+id).addEventListener('input',readGlobals));$('#surface').addEventListener('change',surfaceChanged);$('#roughness').addEventListener('input',()=>{if($('#surface'))$('#surface').value='custom';readGlobals()});syncInputs();}
+function syncInputs(){$('#projectName').value=state.projectName;$('#systemName').value=state.systemName;$('#rho').value=state.air.rho;$('#nu').value=state.air.nu;$('#roughness').value=state.air.roughnessMm;syncSurfaceSelect()}
+function syncSurfaceSelect(){const sel=$('#surface');if(!sel)return;const val=String(state.air.roughnessMm);const opt=Array.from(sel.options).find(o=>o.value!=='custom'&&Math.abs(parseValue(o.value)-state.air.roughnessMm)<0.00001);sel.value=opt?opt.value:'custom'}
+function surfaceChanged(){const sel=$('#surface');if(sel.value!=='custom')$('#roughness').value=sel.value;readGlobals()}
+function recalcSections(){state.sections=state.sections.map((s,i)=>calculate(s.type,s.input,state.air,i+1))}
+function readGlobals(){state.projectName=$('#projectName').value;state.systemName=$('#systemName').value;state.air={rho:parseValue($('#rho').value),nu:parseValue($('#nu').value),roughnessMm:parseValue($('#roughness').value)};recalcSections();render();updateVelocityPreview()}
+function renderForm(values=null){const c=COMPONENTS[state.selected];const mode=editIndex!==null?`Teilstrecke ${editIndex+1} bearbeiten`:insertIndex!==null?`vor Position ${insertIndex+1} einfügen`:'hinzufügen';$('#formTitle').textContent=`${c.label} ${mode}`;$('#dynamicFields').innerHTML=c.fields.map(f=>fieldHtml(f,values)).join('');wirePresetSelect();$$('#componentForm input,#componentForm select').forEach(el=>{el.addEventListener('input',updateVelocityPreview);el.addEventListener('change',updateVelocityPreview)});updateVelocityPreview();const submit=$('#componentForm button[type="submit"]');if(submit)submit.textContent=editIndex!==null?'Änderung speichern':insertIndex!==null?'An Position einfügen':'Teilstrecke berechnen & hinzufügen'}
+function fieldHtml([id,label,type,value,options],values){const val=values&&values[id]!==undefined?values[id]:value;if(type==='select'){return `<div><label>${label}</label><select name="${id}">${options.split(';').map(o=>{const[v,t]=o.split(':');return`<option value="${v}" ${String(v)===String(val)?'selected':''}>${t}</option>`}).join('')}</select></div>`}return`<div><label>${label}</label><input name="${id}" type="${type}" value="${val}" ${type==='number'?'step="any"':''}></div>`}
+function wirePresetSelect(){const rs=$('[name="rectSize"]');if(rs)rs.onchange=()=>{if(rs.value!=='custom'){const [a,b]=rs.value.split('x');const ai=$('[name="a"]'),bi=$('[name="b"]');if(ai)ai.value=a;if(bi)bi.value=b;}updateVelocityPreview()};['a','b'].forEach(n=>{const el=$(`[name="${n}"]`);if(el)el.addEventListener('input',()=>{const r=$('[name="rectSize"]');if(r)r.value='custom'})})}
+function parseValue(v){if(typeof v==='string')v=v.trim().replace(',','.');return v===''||isNaN(v)?v:+v}
+function formData(){const data={};new FormData($('#componentForm')).forEach((v,k)=>{if(k==='zetaStandard'||k==='zetaPreset')return;data[k]=parseValue(v)});return data}
+
+function updateVelocityPreview(){const box=$('#velocityPreview');if(!box)return;try{const input=formData();const sec=calculate(state.selected,input,state.air,1);const vmax=Math.max(sec.v0||0,sec.v1||0);box.innerHTML=`<span>v</span><strong>${round(vmax,2)} m/s</strong>`;box.className='velocity-preview '+(vmax>15?'bad':vmax>10?'warn':'');}catch(e){box.innerHTML='<span>v</span><strong>– m/s</strong>';box.className='velocity-preview'}}
+async function importPdf(e){const file=e.target.files[0];if(!file)return;const card=$('#pdfImportCard'),status=$('#pdfImportStatus'),txt=$('#pdfText'),cand=$('#pdfCandidates');card.style.display='block';status.textContent='PDF wird gelesen …';txt.value='';cand.innerHTML='';try{if(!window.pdfjsLib)throw new Error('PDF-Bibliothek konnte nicht geladen werden. Internet/CDN prüfen.');pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';const buf=await file.arrayBuffer();const pdf=await pdfjsLib.getDocument({data:buf}).promise;let text='';for(let i=1;i<=pdf.numPages;i++){const page=await pdf.getPage(i);const content=await page.getTextContent();text+=content.items.map(it=>it.str).join(' ')+'\n';}txt.value=text.trim();const candidates=parsePdfCandidates(text);status.textContent=`${pdf.numPages} Seite(n) gelesen, ${candidates.length} mögliche Teilstrecke(n) erkannt.`;renderPdfCandidates(candidates);}catch(err){status.textContent='PDF konnte nicht eingelesen werden: '+err.message;}}
+function parsePdfCandidates(text){const out=[];const lines=text.split(/\n|(?=\b\d{2,5}\s*m[³3]\/h)/i);for(const line of lines){const q=(line.match(/(\d+[.,]?\d*)\s*m[³3]\/h/i)||[])[1];const rect=line.match(/(\d{2,4})\s*[x×/]\s*(\d{2,4})\s*mm/i);const roundM=line.match(/(?:DN|Ø|D=?)\s*(\d{2,4})/i);const len=(line.match(/(\d+[.,]?\d*)\s*m(?:\s|$)/i)||[])[1];if(q&&(rect||roundM)){out.push({q:parseValue(q),type:rect?'rect':'round',a:rect?+rect[1]:undefined,b:rect?+rect[2]:undefined,d:roundM?+roundM[1]:undefined,length:len?parseValue(len):1,description:line.trim().slice(0,90)})}}return out.slice(0,30)}
+function renderPdfCandidates(items){const box=$('#pdfCandidates');if(!items.length){box.innerHTML='<p class="hint">Keine sicheren Kanal-/Rohrdaten erkannt. Der PDF-Text steht oben und kann manuell übertragen werden.</p>';return}box.innerHTML=items.map((it,i)=>`<div class="candidate"><div><b>${it.type==='rect'?'Rechteckkanal':'Rohr'}</b> · ${it.q} m³/h · ${it.type==='rect'?it.a+'×'+it.b+' mm':'Ø '+it.d+' mm'} · L ${it.length} m<br><small>${it.description}</small></div><button type="button" class="mini" data-pdf-add="${i}">Übernehmen</button></div>`).join('');$$('[data-pdf-add]').forEach(b=>b.onclick=()=>{const it=items[+b.dataset.pdfAdd];state.selected=it.type;syncActiveTool();const input=it.type==='rect'?{description:it.description,q:it.q,a:it.a,b:it.b,length:it.length}:{description:it.description,q:it.q,d:it.d,length:it.length};const sec=calculate(it.type,input,state.air,1);sec.input=input;state.sections.push(sec);recalcSections();renderForm();render();});}
+
+function saveSection(){const input=formData();const section=calculate(state.selected,input,state.air,1);section.input=input;if(editIndex!==null){state.sections[editIndex]=section;editIndex=null}else if(insertIndex!==null){state.sections.splice(insertIndex,0,section);insertIndex=null}else{state.sections.push(section)}recalcSections();renderForm();render();document.querySelector('.summary-grid')?.scrollIntoView({behavior:'smooth',block:'start'})}
+function render(){const tb=$('#sectionsTable tbody');tb.innerHTML=state.sections.map(s=>`<tr>${displayRow(s).map((v,i)=>`<td class="${i===4?((Math.max(s.v0,s.v1)>15)?'bad':Math.max(s.v0,s.v1)>10?'warn':''):''}">${v}</td>`).join('')}<td class="row-actions"><button class="mini" data-insert-before="${s.no}">+ davor</button><button class="mini" data-insert-after="${s.no}">+ danach</button><button class="mini" data-edit="${s.no}">Ändern</button><button class="delete" data-del="${s.no}">Löschen</button></td></tr>`).join('');$$('[data-del]').forEach(b=>b.onclick=()=>{state.sections=state.sections.filter(s=>s.no!==+b.dataset.del);editIndex=null;insertIndex=null;recalcSections();renderForm();render()});$$('[data-edit]').forEach(b=>b.onclick=()=>startEdit(+b.dataset.edit-1));$$('[data-insert-before]').forEach(b=>b.onclick=()=>startInsert(+b.dataset.insertBefore-1));$$('[data-insert-after]').forEach(b=>b.onclick=()=>startInsert(+b.dataset.insertAfter));const totals=state.sections.reduce((a,s)=>{a.dp+=s.dp;a.f+=s.dpF;a.l+=s.dpL;return a},{dp:0,f:0,l:0});$('#totalDp').textContent=round(totals.dp,1)+' Pa';$('#frictionDp').textContent=round(totals.f,1)+' Pa';$('#localDp').textContent=round(totals.l,1)+' Pa';$('#countRows').textContent=state.sections.length;const vmax=state.sections.reduce((m,s)=>Math.max(m,s.v0||0,s.v1||0),0);$('#maxVelocity').textContent=round(vmax,2)+' m/s';const warnings=state.sections.flatMap(s=>s.warnings.map(w=>`TS ${s.no}: ${w}`));$('#validationState').textContent=warnings.length?warnings.join(' | '):'Keine Warnungen';$('#validationState').className=warnings.length?'warn':'ok'}
+function startEdit(idx){const s=state.sections[idx];if(!s)return;state.selected=s.type;editIndex=idx;insertIndex=null;syncActiveTool();renderForm(s.input);window.scrollTo({top:0,behavior:'smooth'})}
+function startInsert(idx){editIndex=null;insertIndex=Math.max(0,Math.min(idx,state.sections.length));renderForm();window.scrollTo({top:0,behavior:'smooth'})}
+function syncActiveTool(){const cs=$('#componentSelect');if(cs&&COMPONENTS[state.selected])cs.value=state.selected;$$('.tool').forEach(x=>x.classList.toggle('active',x.dataset.component===state.selected))}
+function download(filename,content,type='application/json'){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([content],{type}));a.download=filename;a.click();URL.revokeObjectURL(a.href)}
+function downloadProject(){readGlobals();download(`${safe(state.projectName)}.json`,JSON.stringify(state,null,2))}
+function loadProject(e){const file=e.target.files[0];if(!file)return;const r=new FileReader();r.onload=()=>{state=JSON.parse(r.result);editIndex=null;insertIndex=null;syncInputs();syncActiveTool();renderForm();recalcSections();render()};r.readAsText(file)}
+function exportCsv(){const head=['Nr','Bauteil','Beschreibung','V [m3/h]','v0 [m/s]','v1 [m/s]','A0 [m2]','A1 [m2]','Abmessung','L [m]','Re','lambda','zeta','R [Pa/m]','dp Reibung [Pa]','dp zeta [Pa]','dp ges [Pa]'];const rows=state.sections.map(formatRow);const csv=[head,...rows].map(r=>r.map(v=>'"'+String(v).replaceAll('"','""')+'"').join(';')).join('\\n');download(safe(state.projectName)+'.csv',csv,'text/csv')}
+function safe(s){return(s||'druckverlust').replace(/[\/:*?"<>| ]+/g,'_')}
+init();
+
+  </script>
+</body>
+</html>
